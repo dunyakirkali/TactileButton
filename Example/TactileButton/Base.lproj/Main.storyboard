@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.13.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vXZ-lx-hvc">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.9"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -20,11 +20,118 @@
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LVU-uK-yEh" customClass="TactileButton" customModule="TactileButton">
+                                <rect key="frame" x="94" y="500.5" width="187.5" height="66.5"/>
+                                <color key="backgroundColor" red="0.42443013190000001" green="0.17244434359999999" blue="0.65062755350000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="1" green="0.99997437" blue="0.99999129769999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Click me!">
+                                    <color key="titleColor" red="1" green="0.99997437" blue="0.99999129769999995" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                        <real key="value" value="0.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                        <color key="value" red="0.32584697010000002" green="0.32583719490000002" blue="0.32584273819999998" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                        <size key="value" width="0.0" height="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="np2-3P-c1t">
+                                <rect key="frame" x="20" y="0.0" width="335" height="400"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="3Mr-g6-oTp">
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="400"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scale rate:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sMR-rD-ECO">
+                                                <rect key="frame" x="0.0" y="0.0" width="335" height="57"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.10000000000000001" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="GQx-fn-xE8">
+                                                <rect key="frame" x="-2" y="57" width="339" height="58.5"/>
+                                                <connections>
+                                                    <action selector="scaleRateChanged:" destination="vXZ-lx-hvc" eventType="valueChanged" id="Qjh-7A-uSi"/>
+                                                </connections>
+                                            </slider>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Height rate:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AyV-xw-OZP">
+                                                <rect key="frame" x="0.0" y="114.5" width="335" height="57"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.050000000000000003" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="P3g-xb-mgU">
+                                                <rect key="frame" x="-2" y="171.5" width="339" height="58"/>
+                                                <connections>
+                                                    <action selector="heightRateChanged:" destination="vXZ-lx-hvc" eventType="valueChanged" id="NpS-BK-6d1"/>
+                                                </connections>
+                                            </slider>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shadow Radius:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Te5-UR-5lb">
+                                                <rect key="frame" x="0.0" y="228.5" width="335" height="57.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="10" minValue="0.0" maxValue="30" translatesAutoresizingMaskIntoConstraints="NO" id="onk-n0-xXF">
+                                                <rect key="frame" x="-2" y="286" width="339" height="58"/>
+                                                <connections>
+                                                    <action selector="shadowRadiusChanged:" destination="vXZ-lx-hvc" eventType="valueChanged" id="1hz-q3-PEn"/>
+                                                </connections>
+                                            </slider>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="lI3-cR-wyj">
+                                                <rect key="frame" x="0.0" y="343" width="335" height="57"/>
+                                                <subviews>
+                                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SUh-P4-g1T">
+                                                        <rect key="frame" x="0.0" y="0.0" width="168" height="57"/>
+                                                    </pickerView>
+                                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k5Q-He-zfS">
+                                                        <rect key="frame" x="167.5" y="0.0" width="167.5" height="57"/>
+                                                    </pickerView>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="3Mr-g6-oTp" secondAttribute="bottom" id="SSG-zV-h5h"/>
+                                    <constraint firstAttribute="trailing" secondItem="3Mr-g6-oTp" secondAttribute="trailing" id="YN9-Ci-9TD"/>
+                                    <constraint firstItem="3Mr-g6-oTp" firstAttribute="top" secondItem="np2-3P-c1t" secondAttribute="top" id="nop-G0-dsT"/>
+                                    <constraint firstItem="3Mr-g6-oTp" firstAttribute="leading" secondItem="np2-3P-c1t" secondAttribute="leading" id="xSB-7Z-F3e"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="np2-3P-c1t" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="20" id="5JI-dN-dym"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="LVU-uK-yEh" secondAttribute="bottom" constant="100" id="A5a-8f-2Em"/>
+                            <constraint firstItem="np2-3P-c1t" firstAttribute="height" secondItem="kh9-bI-dsS" secondAttribute="height" multiplier="0.6" id="ADA-AR-Qqg"/>
+                            <constraint firstItem="LVU-uK-yEh" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="Lt2-rr-AN8"/>
+                            <constraint firstItem="np2-3P-c1t" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="TJB-Ec-0Mj"/>
+                            <constraint firstAttribute="trailing" secondItem="np2-3P-c1t" secondAttribute="trailing" constant="20" id="pk5-xA-azQ"/>
+                            <constraint firstItem="LVU-uK-yEh" firstAttribute="width" secondItem="kh9-bI-dsS" secondAttribute="width" multiplier="0.5" id="qON-wo-xGJ"/>
+                            <constraint firstItem="LVU-uK-yEh" firstAttribute="height" secondItem="kh9-bI-dsS" secondAttribute="height" multiplier="0.1" id="rzC-hx-JNp"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="curveSelector" destination="SUh-P4-g1T" id="Bf9-c9-lH6"/>
+                        <outlet property="easeSelector" destination="k5Q-He-zfS" id="Ngd-FF-74S"/>
+                        <outlet property="heightRate" destination="P3g-xb-mgU" id="SWA-Rs-hYs"/>
+                        <outlet property="scaleRate" destination="GQx-fn-xE8" id="vv2-xb-EdT"/>
+                        <outlet property="sdwButton" destination="LVU-uK-yEh" id="Igr-SB-d1j"/>
+                        <outlet property="shadowRadius" destination="onk-n0-xXF" id="LyH-Dc-OKr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="140" y="132.68365817091455"/>
         </scene>
     </scenes>
 </document>

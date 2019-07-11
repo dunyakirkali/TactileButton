@@ -1,0 +1,22 @@
+{
+  "name": "TactileButton",
+  "version": "0.1.0",
+  "summary": "A short description of TactileButton.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/f941381defc64b2588b9f4db8ade0a4896544b6c/TactileButton",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "f941381defc64b2588b9f4db8ade0a4896544b6c": "dunyakirkali@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/f941381defc64b2588b9f4db8ade0a4896544b6c/TactileButton.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "TactileButton/Classes/**/*"
+}
